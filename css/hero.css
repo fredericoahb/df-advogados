@@ -1,0 +1,196 @@
+/* ============================================
+   DF ADVOGADOS — Hero Section
+   ============================================ */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--color-teal-deep);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(196, 165, 90, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(26, 74, 66, 0.6) 0%, transparent 50%),
+    linear-gradient(160deg, var(--color-teal-deep) 0%, var(--color-black) 100%);
+  z-index: 1;
+}
+
+.hero__pattern {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.03;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 80px, var(--color-gold) 80px, var(--color-gold) 81px),
+    repeating-linear-gradient(90deg, transparent, transparent 80px, var(--color-gold) 80px, var(--color-gold) 81px);
+}
+
+.hero__content {
+  position: relative;
+  z-index: var(--z-content);
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 8rem var(--space-xl) var(--space-3xl);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl);
+  align-items: center;
+}
+
+/* ---- Hero Text ---- */
+.hero__text {
+  animation: fadeUp 1s ease forwards;
+  opacity: 0;
+}
+
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  border: 1px solid rgba(196, 165, 90, 0.3);
+  margin-bottom: var(--space-xl);
+}
+
+.hero__badge-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--color-gold);
+  border-radius: 50%;
+}
+
+.hero__badge-text {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-gold-light);
+}
+
+.hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 5vw, 4.2rem);
+  font-weight: 500;
+  color: var(--color-cream);
+  line-height: 1.15;
+  margin-bottom: var(--space-lg);
+}
+
+.hero__title em {
+  font-style: italic;
+  color: var(--color-gold);
+}
+
+.hero__desc {
+  font-size: 1.05rem;
+  color: var(--color-gold-pale);
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  max-width: 520px;
+  font-weight: 300;
+}
+
+.hero__actions {
+  display: flex;
+  gap: var(--space-md);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* ---- Hero Visual (Logo Emblem) ---- */
+.hero__visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeUp 1s 0.3s ease forwards;
+  opacity: 0;
+}
+
+.hero__emblem {
+  position: relative;
+  width: 380px;
+  height: 380px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero__emblem::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(196, 165, 90, 0.15);
+  border-radius: 50%;
+  animation: emblemSpin 30s linear infinite;
+}
+
+.hero__emblem::after {
+  content: '';
+  position: absolute;
+  width: 130%;
+  height: 130%;
+  border: 1px solid rgba(196, 165, 90, 0.08);
+  border-radius: 50%;
+  animation: emblemSpin 45s linear infinite reverse;
+}
+
+.hero__emblem-img {
+  width: 180px;
+  height: auto;
+  filter: drop-shadow(0 0 60px rgba(196, 165, 90, 0.2));
+}
+
+/* ---- Stats Bar ---- */
+.stats {
+  background: var(--color-teal-dark);
+  padding: var(--space-2xl) var(--space-xl);
+  border-top: var(--border-gold-subtle);
+}
+
+.stats__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-xl);
+}
+
+.stats__item {
+  text-align: center;
+  position: relative;
+}
+
+.stats__item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 10%;
+  height: 80%;
+  width: 1px;
+  background: rgba(196, 165, 90, 0.15);
+}
+
+.stats__number {
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: var(--color-gold);
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+
+.stats__label {
+  font-size: 0.78rem;
+  color: var(--color-gold-pale);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 400;
+}

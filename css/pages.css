@@ -1,0 +1,378 @@
+/* ============================================
+   DF ADVOGADOS — Team Section
+   ============================================ */
+
+.team {
+  background: var(--color-cream);
+}
+
+.team__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+}
+
+.team-card {
+  background: var(--color-white);
+  overflow: hidden;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.team-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.team-card__photo {
+  width: 100%;
+  aspect-ratio: 1;
+  background: var(--color-teal-dark);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-card__photo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(22, 56, 50, 0.6) 0%, transparent 60%);
+  z-index: 1;
+}
+
+.team-card__initials {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--color-gold-pale);
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.team-card__info {
+  padding: var(--space-lg);
+}
+
+.team-card__name {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-teal-deep);
+  margin-bottom: 0.2rem;
+}
+
+.team-card__role {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 0.8rem;
+}
+
+.team-card__bio {
+  font-size: 0.88rem;
+  color: var(--text-mid);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.team-card__oab {
+  font-size: 0.78rem;
+  color: var(--text-light);
+  margin-top: 0.8rem;
+  padding-top: 0.8rem;
+  border-top: var(--border-cream);
+}
+
+/* ============================================
+   DF ADVOGADOS — Testimonials Section
+   ============================================ */
+
+.testimonials {
+  background: var(--color-white);
+}
+
+.testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+}
+
+.testimonial-card {
+  padding: var(--space-xl);
+  border: var(--border-cream);
+  position: relative;
+}
+
+.testimonial-card__quote {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  color: var(--color-gold);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  opacity: 0.5;
+}
+
+.testimonial-card__text {
+  font-size: 0.95rem;
+  color: var(--text-mid);
+  line-height: 1.8;
+  font-style: italic;
+  margin-bottom: var(--space-lg);
+  font-weight: 300;
+}
+
+.testimonial-card__author {
+  font-weight: 500;
+  color: var(--color-teal-deep);
+  font-size: 0.9rem;
+}
+
+.testimonial-card__role {
+  font-size: 0.78rem;
+  color: var(--text-light);
+}
+
+.testimonial-card__stars {
+  color: var(--color-gold);
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  margin-top: 0.5rem;
+}
+
+/* ============================================
+   DF ADVOGADOS — CTA Section
+   ============================================ */
+
+.cta-section {
+  background: var(--color-teal-deep);
+  padding: 5rem var(--space-xl);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(196, 165, 90, 0.07) 0%, transparent 60%);
+}
+
+.cta-section__content {
+  position: relative;
+  z-index: var(--z-content);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta-section__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 500;
+  color: var(--color-cream);
+  margin-bottom: var(--space-md);
+  line-height: 1.2;
+}
+
+.cta-section__title em {
+  color: var(--color-gold);
+  font-style: italic;
+}
+
+.cta-section__desc {
+  color: var(--color-gold-pale);
+  font-size: 1rem;
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+}
+
+/* ============================================
+   DF ADVOGADOS — Contact Section
+   ============================================ */
+
+.contact {
+  background: var(--color-cream);
+}
+
+.contact__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-teal-deep);
+  margin-bottom: 0.4rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: var(--border-cream);
+  background: var(--color-white);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--text-dark);
+  outline: none;
+  transition: border-color var(--transition-fast);
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--color-gold);
+}
+
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+/* ---- Contact Info ---- */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.contact-info__block h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-teal-deep);
+  margin-bottom: 0.5rem;
+}
+
+.contact-info__block p,
+.contact-info__block a {
+  font-size: 0.9rem;
+  color: var(--text-mid);
+  font-weight: 300;
+  text-decoration: none;
+  line-height: 1.7;
+}
+
+.contact-info__block a:hover {
+  color: var(--color-gold);
+}
+
+.contact-hours {
+  padding: var(--space-lg);
+  background: var(--color-teal-deep);
+}
+
+.contact-hours h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-gold);
+  margin-bottom: 0.7rem;
+}
+
+.contact-hours p {
+  font-size: 0.85rem;
+  color: var(--color-gold-pale);
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+/* ============================================
+   DF ADVOGADOS — Footer
+   ============================================ */
+
+.footer {
+  background: var(--color-black);
+  padding: var(--space-2xl) var(--space-xl) var(--space-lg);
+  border-top: 1px solid rgba(196, 165, 90, 0.1);
+}
+
+.footer__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.footer__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-xl);
+  padding-bottom: var(--space-xl);
+  border-bottom: 1px solid rgba(196, 165, 90, 0.08);
+  margin-bottom: var(--space-lg);
+}
+
+.footer__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.footer__logo img {
+  height: 40px;
+}
+
+.footer__logo-text {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-gold);
+}
+
+.footer__links {
+  display: flex;
+  gap: var(--space-xl);
+}
+
+.footer__links a {
+  font-size: 0.82rem;
+  color: var(--color-gold-pale);
+  transition: color var(--transition-fast);
+}
+
+.footer__links a:hover {
+  color: var(--color-gold);
+}
+
+.footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.footer__copy {
+  font-size: 0.75rem;
+  color: rgba(196, 165, 90, 0.4);
+}
+
+.footer__legal {
+  font-size: 0.7rem;
+  color: rgba(196, 165, 90, 0.3);
+}

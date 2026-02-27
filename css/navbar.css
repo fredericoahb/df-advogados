@@ -1,0 +1,144 @@
+/* ============================================
+   DF ADVOGADOS — Navbar
+   ============================================ */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: var(--z-navbar);
+  padding: var(--space-md) 0;
+  transition: all var(--transition-mid);
+  background: transparent;
+}
+
+.navbar--scrolled {
+  background: rgba(22, 56, 50, 0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 0.6rem 0;
+  box-shadow: var(--shadow-navbar);
+}
+
+.navbar__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--space-xl);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ---- Logo ---- */
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-decoration: none;
+}
+
+.navbar__logo-img {
+  height: 48px;
+  width: auto;
+  transition: height var(--transition-mid);
+}
+
+.navbar--scrolled .navbar__logo-img {
+  height: 38px;
+}
+
+.navbar__logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.navbar__logo-name {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-gold);
+  letter-spacing: 0.04em;
+}
+
+.navbar__logo-sub {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 400;
+  color: var(--color-gold-pale);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+/* ---- Navigation Links ---- */
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+.navbar__links a {
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: var(--color-cream);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.navbar__links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-gold);
+  transition: width var(--transition-fast);
+}
+
+.navbar__links a:hover {
+  color: var(--color-gold);
+}
+
+.navbar__links a:hover::after {
+  width: 100%;
+}
+
+/* ---- CTA Button in Nav ---- */
+.navbar__cta {
+  font-size: 0.8rem !important;
+  padding: 0.55rem 1.4rem;
+  border: 1px solid var(--color-gold) !important;
+  color: var(--color-gold) !important;
+  transition: all var(--transition-fast) !important;
+}
+
+.navbar__cta:hover {
+  background: var(--color-gold) !important;
+  color: var(--color-teal-deep) !important;
+}
+
+.navbar__cta::after {
+  display: none !important;
+}
+
+/* ---- Hamburger ---- */
+.navbar__hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+
+.navbar__hamburger span {
+  width: 26px;
+  height: 2px;
+  background: var(--color-gold);
+  transition: var(--transition-fast);
+  display: block;
+}

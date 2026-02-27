@@ -1,0 +1,116 @@
+/* ============================================
+   DF ADVOGADOS — Shared Components
+   ============================================ */
+
+/* ---- Section Layout ---- */
+.section {
+  padding: var(--section-padding);
+}
+
+.section__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+/* ---- Section Header ---- */
+.section-header {
+  margin-bottom: 3.5rem;
+}
+
+.section-header--center {
+  text-align: center;
+}
+
+.section-header__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: var(--space-md);
+}
+
+.section-header--center .section-header__eyebrow {
+  justify-content: center;
+}
+
+.section-header__eyebrow-line {
+  width: 30px;
+  height: 1px;
+  background: var(--color-gold);
+}
+
+.section-header__eyebrow-text {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.section-header__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 500;
+  color: var(--color-teal-deep);
+  line-height: 1.2;
+  margin-bottom: var(--space-md);
+}
+
+.section-header__subtitle {
+  font-size: 1rem;
+  color: var(--text-mid);
+  max-width: 600px;
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+.section-header--center .section-header__subtitle {
+  margin: 0 auto;
+}
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  padding: 0.9rem 2rem;
+}
+
+.btn--primary {
+  background: var(--color-gold);
+  color: var(--color-teal-deep);
+}
+
+.btn--primary:hover {
+  background: var(--color-gold-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold);
+}
+
+.btn--secondary {
+  background: transparent;
+  color: var(--color-cream);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-weight: 400;
+}
+
+.btn--secondary:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+.btn svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+}

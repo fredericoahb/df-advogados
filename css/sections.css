@@ -1,0 +1,296 @@
+/* ============================================
+   DF ADVOGADOS — About Section
+   ============================================ */
+
+.about {
+  background: var(--color-cream);
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl);
+  align-items: center;
+}
+
+.about__image-wrapper {
+  position: relative;
+}
+
+.about__image {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background: var(--color-teal-deep);
+  position: relative;
+  overflow: hidden;
+}
+
+.about__image::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 70%, rgba(196, 165, 90, 0.15) 0%, transparent 60%),
+    linear-gradient(135deg, var(--color-teal-deep) 0%, var(--color-teal-dark) 100%);
+}
+
+.about__image-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 140px;
+  opacity: 0.4;
+}
+
+.about__image-accent {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 200px;
+  height: 200px;
+  border: 1px solid var(--color-gold);
+  opacity: 0.3;
+  z-index: -1;
+}
+
+.about__content p {
+  color: var(--text-mid);
+  margin-bottom: var(--space-lg);
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+.about__highlights {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  margin-top: var(--space-xl);
+}
+
+.about__highlight {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.about__highlight-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--color-teal-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.about__highlight-icon svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--color-gold);
+  fill: none;
+  stroke-width: 2;
+}
+
+.about__highlight-text {
+  font-size: 0.88rem;
+  color: var(--text-dark);
+  font-weight: 400;
+}
+
+/* ============================================
+   DF ADVOGADOS — Areas Section
+   ============================================ */
+
+.areas {
+  background: var(--color-white);
+}
+
+.areas__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+
+.area-card {
+  padding: 2.5rem;
+  border: var(--border-cream);
+  position: relative;
+  transition: all var(--transition-mid);
+  cursor: default;
+  overflow: hidden;
+}
+
+.area-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--color-gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-mid);
+}
+
+.area-card:hover::before {
+  transform: scaleX(1);
+}
+
+.area-card:hover {
+  background: var(--color-cream);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+}
+
+/* ---- Featured Card ---- */
+.area-card--featured {
+  background: var(--color-teal-deep);
+  border-color: var(--color-teal-deep);
+}
+
+.area-card--featured::before {
+  transform: scaleX(1);
+}
+
+.area-card--featured:hover {
+  background: var(--color-teal-dark);
+  transform: translateY(-4px);
+}
+
+.area-card__icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: var(--space-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--border-cream);
+  transition: border-color var(--transition-fast);
+}
+
+.area-card:hover .area-card__icon {
+  border-color: var(--color-gold);
+}
+
+.area-card--featured .area-card__icon {
+  border-color: rgba(196, 165, 90, 0.3);
+}
+
+.area-card__icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--color-gold);
+  fill: none;
+  stroke-width: 1.8;
+}
+
+.area-card__title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--color-teal-deep);
+  margin-bottom: 0.8rem;
+}
+
+.area-card--featured .area-card__title {
+  color: var(--color-cream);
+}
+
+.area-card__desc {
+  font-size: 0.9rem;
+  color: var(--text-mid);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.area-card--featured .area-card__desc {
+  color: var(--color-gold-pale);
+}
+
+.area-card__tag {
+  display: inline-block;
+  margin-top: var(--space-md);
+  padding: 0.25rem 0.7rem;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  background: rgba(196, 165, 90, 0.15);
+  color: var(--color-gold);
+}
+
+/* ============================================
+   DF ADVOGADOS — Differentials Section
+   ============================================ */
+
+.differentials {
+  background: var(--color-teal-deep);
+  position: relative;
+  overflow: hidden;
+}
+
+.differentials::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  border: 1px solid rgba(196, 165, 90, 0.06);
+}
+
+.differentials .section-header__title {
+  color: var(--color-cream);
+}
+
+.differentials .section-header__subtitle {
+  color: var(--color-gold-pale);
+}
+
+.diff__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-xl);
+  margin-top: var(--space-md);
+}
+
+.diff-card {
+  display: flex;
+  gap: var(--space-lg);
+  padding: var(--space-xl);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(196, 165, 90, 0.1);
+  transition: all var(--transition-fast);
+}
+
+.diff-card:hover {
+  background: rgba(196, 165, 90, 0.06);
+  border-color: rgba(196, 165, 90, 0.25);
+}
+
+.diff-card__num {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: rgba(196, 165, 90, 0.25);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.diff-card__title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-cream);
+  margin-bottom: 0.5rem;
+}
+
+.diff-card__desc {
+  font-size: 0.88rem;
+  color: var(--color-gold-pale);
+  line-height: 1.7;
+  font-weight: 300;
+}

@@ -1,0 +1,63 @@
+/* ============================================
+   DF ADVOGADOS — Design Tokens & CSS Variables
+   ============================================ */
+
+:root {
+  /* ---- Brand Colors ---- */
+  --color-teal-deep: #163832;
+  --color-teal-dark: #1a4a42;
+  --color-teal-mid: #1f5c52;
+  --color-gold: #c4a55a;
+  --color-gold-light: #d4ba7a;
+  --color-gold-pale: #e8dbb8;
+
+  /* ---- Neutral Colors ---- */
+  --color-cream: #f7f3ea;
+  --color-cream-dark: #ebe5d8;
+  --color-white: #ffffff;
+  --color-black: #0f2a25;
+
+  /* ---- Text Colors ---- */
+  --text-dark: #1a1a1a;
+  --text-mid: #4a4a4a;
+  --text-light: #7a7a7a;
+
+  /* ---- Typography ---- */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Outfit', system-ui, sans-serif;
+
+  /* ---- Spacing Scale ---- */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-4xl: 6rem;
+
+  /* ---- Layout ---- */
+  --container-max: 1280px;
+  --section-padding: 6rem 2rem;
+  --section-padding-mobile: 4rem 1.5rem;
+
+  /* ---- Borders & Radius ---- */
+  --border-gold-subtle: 1px solid rgba(196, 165, 90, 0.15);
+  --border-cream: 1px solid var(--color-cream-dark);
+
+  /* ---- Shadows ---- */
+  --shadow-card: 0 12px 40px rgba(0, 0, 0, 0.06);
+  --shadow-card-hover: 0 20px 40px rgba(0, 0, 0, 0.08);
+  --shadow-gold: 0 8px 25px rgba(196, 165, 90, 0.3);
+  --shadow-navbar: 0 2px 30px rgba(0, 0, 0, 0.15);
+
+  /* ---- Transitions ---- */
+  --transition-fast: 0.3s ease;
+  --transition-mid: 0.4s ease;
+  --transition-slow: 0.7s ease;
+
+  /* ---- Z-Index ---- */
+  --z-navbar: 1000;
+  --z-overlay: 900;
+  --z-content: 2;
+}
