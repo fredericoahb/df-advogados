@@ -2,6 +2,11 @@
 
 Site profissional para o escritório de advocacia **DF Advogados**, com foco em Direito Civil e Trabalhista.
 
+![HTML5](https://img.shields.io/badge/HTML5-5.0-E34F26?logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-3.0-1572B6?logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?logo=javascript&logoColor=black)
+![Vercel](https://img.shields.io/badge/Vercel-deployed-000000?logo=vercel&logoColor=white)
+
 ---
 
 ## 🖥️ Preview
