@@ -1,6 +1,6 @@
 # DF Advogados — Site Institucional
 
-Site profissional para o escritório de advocacia **DF Advogados**, com foco em Direito Civil e Trabalhista.
+Site institucional moderno e responsivo, desenvolvido para destacar a expertise do escritório em soluções jurídicas eficazes e personalizadas.
 
 ![HTML5](https://img.shields.io/badge/HTML5-5.0-E34F26?logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-3.0-1572B6?logo=css3&logoColor=white)
