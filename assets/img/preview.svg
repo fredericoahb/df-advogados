@@ -1,0 +1,446 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" width="900" height="520" style="background:#0d2420">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&amp;family=Outfit:wght@300;400;500&amp;display=swap');
+      .font-display { font-family: 'Cormorant Garamond', Georgia, serif; }
+      .font-body { font-family: 'Outfit', Arial, sans-serif; }
+
+      /* Slide animations - each slide visible for ~3s, total 6 slides = 18s loop */
+      .slide { animation: fadeSlide 18s infinite; opacity: 0; }
+      .slide-1 { animation-delay: 0s; }
+      .slide-2 { animation-delay: 3s; }
+      .slide-3 { animation-delay: 6s; }
+      .slide-4 { animation-delay: 9s; }
+      .slide-5 { animation-delay: 12s; }
+      .slide-6 { animation-delay: 15s; }
+
+      @keyframes fadeSlide {
+        0%   { opacity: 0; }
+        5%   { opacity: 1; }
+        16%  { opacity: 1; }
+        20%  { opacity: 0; }
+        100% { opacity: 0; }
+      }
+
+      /* Dot indicator animation */
+      .dot { animation: dotAnim 18s infinite; fill: #c4a55a44; }
+      .dot-1 { animation-delay: 0s; }
+      .dot-2 { animation-delay: 3s; }
+      .dot-3 { animation-delay: 6s; }
+      .dot-4 { animation-delay: 9s; }
+      .dot-5 { animation-delay: 12s; }
+      .dot-6 { animation-delay: 15s; }
+      @keyframes dotAnim {
+        0%   { fill: #c4a55a; r: 5; }
+        16%  { fill: #c4a55a; r: 5; }
+        20%  { fill: #c4a55a44; r: 4; }
+        100% { fill: #c4a55a44; r: 4; }
+      }
+
+      .gold { fill: #c4a55a; }
+      .white { fill: #f5f0e8; }
+      .green-deep { fill: #163832; }
+      .green-mid { fill: #1e4a42; }
+      .text-muted { fill: #a89880; }
+
+      /* Underline gold animate */
+      .underline-gold { stroke: #c4a55a; stroke-width: 2; fill: none; stroke-dasharray: 200; stroke-dashoffset: 200; }
+      .slide-1 .underline-gold { animation: drawLine 18s infinite; animation-delay: 0.3s; }
+      .slide-2 .underline-gold { animation: drawLine 18s infinite; animation-delay: 3.3s; }
+      .slide-3 .underline-gold { animation: drawLine 18s infinite; animation-delay: 6.3s; }
+      .slide-4 .underline-gold { animation: drawLine 18s infinite; animation-delay: 9.3s; }
+      @keyframes drawLine {
+        0%    { stroke-dashoffset: 200; }
+        8%    { stroke-dashoffset: 0; }
+        16%   { stroke-dashoffset: 0; }
+        20%   { stroke-dashoffset: 200; }
+        100%  { stroke-dashoffset: 200; }
+      }
+    </style>
+
+    <!-- Browser chrome gradient -->
+    <linearGradient id="browserTop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a2a28"/>
+      <stop offset="100%" stop-color="#0f1e1c"/>
+    </linearGradient>
+    <linearGradient id="heroGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d2420"/>
+      <stop offset="100%" stop-color="#163832"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e4a42"/>
+      <stop offset="100%" stop-color="#163832"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#c4a55a"/>
+      <stop offset="100%" stop-color="#e8c97a"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- ═══ BROWSER CHROME ═══ -->
+  <rect width="900" height="520" rx="12" fill="#0a1a18"/>
+  <!-- Browser bar -->
+  <rect width="900" height="44" rx="12" fill="url(#browserTop)"/>
+  <rect y="32" width="900" height="12" fill="#0f1e1c"/>
+  <!-- Traffic lights -->
+  <circle cx="24" cy="22" r="6" fill="#ff5f57"/>
+  <circle cx="44" cy="22" r="6" fill="#febc2e"/>
+  <circle cx="64" cy="22" r="6" fill="#28c840"/>
+  <!-- Address bar -->
+  <rect x="140" y="12" width="480" height="20" rx="10" fill="#1a2e2c"/>
+  <text x="200" y="26" font-size="11" fill="#7aaa99" font-family="monospace">df-advogados.vercel.app</text>
+  <!-- Lock icon -->
+  <text x="155" y="26" font-size="10" fill="#4a8a79" font-family="monospace">🔒</text>
+  <!-- Content area bg -->
+  <rect y="44" width="900" height="476" fill="#0d2420"/>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- SLIDE 1 — HERO -->
+  <!-- ═══════════════════════════════════════ -->
+  <g class="slide slide-1">
+    <!-- Navbar -->
+    <rect y="44" width="900" height="52" fill="#0d2420" opacity="0.97"/>
+    <rect y="44" width="900" height="1" fill="#c4a55a" opacity="0.3"/>
+    <!-- Logo mark -->
+    <rect x="40" y="56" width="28" height="28" rx="3" fill="url(#goldGrad)" opacity="0.9"/>
+    <text x="54" y="75" text-anchor="middle" font-size="13" font-weight="700" fill="#0d2420" class="font-display">DF</text>
+    <text x="76" y="69" font-size="12" font-weight="600" fill="#f5f0e8" class="font-display">DF Advogados</text>
+    <text x="76" y="81" font-size="9" fill="#a89880" class="font-body">Advocacia &amp; Consultoria</text>
+    <!-- Nav links -->
+    <text x="550" y="74" font-size="10" fill="#a89880" class="font-body">Sobre</text>
+    <text x="600" y="74" font-size="10" fill="#a89880" class="font-body">Áreas</text>
+    <text x="650" y="74" font-size="10" fill="#a89880" class="font-body">Equipe</text>
+    <rect x="695" y="61" width="90" height="24" rx="12" fill="url(#goldGrad)" opacity="0.9"/>
+    <text x="740" y="78" text-anchor="middle" font-size="9" font-weight="500" fill="#0d2420" class="font-body">Agendar Consulta</text>
+
+    <!-- Hero content -->
+    <text x="450" y="155" text-anchor="middle" font-size="10" letter-spacing="4" fill="#c4a55a" class="font-body">EXCELÊNCIA JURÍDICA</text>
+    <line x1="340" y1="155" x2="400" y2="155" stroke="#c4a55a" stroke-width="0.5" opacity="0.5"/>
+    <line x1="500" y1="155" x2="560" y2="155" stroke="#c4a55a" stroke-width="0.5" opacity="0.5"/>
+
+    <text x="450" y="205" text-anchor="middle" font-size="38" font-weight="400" fill="#f5f0e8" class="font-display">Protegemos o que é mais</text>
+    <text x="450" y="248" text-anchor="middle" font-size="38" font-style="italic" fill="#c4a55a" class="font-display" filter="url(#glow)">importante para você</text>
+    <line class="underline-gold" x1="310" y1="255" x2="590" y2="255"/>
+
+    <text x="450" y="285" text-anchor="middle" font-size="12" fill="#a89880" class="font-body">Assessoria jurídica personalizada em Direito Civil e Trabalhista</text>
+    <text x="450" y="302" text-anchor="middle" font-size="12" fill="#a89880" class="font-body">para pessoas físicas e empresas.</text>
+
+    <!-- CTA buttons -->
+    <rect x="290" y="320" width="150" height="36" rx="18" fill="url(#goldGrad)"/>
+    <text x="365" y="343" text-anchor="middle" font-size="11" font-weight="500" fill="#0d2420" class="font-body">Agendar Consulta</text>
+    <rect x="460" y="320" width="150" height="36" rx="18" fill="none" stroke="#c4a55a" stroke-width="1.5"/>
+    <text x="535" y="343" text-anchor="middle" font-size="11" fill="#c4a55a" class="font-body">Nossas Áreas</text>
+
+    <!-- Stats bar -->
+    <rect y="395" width="900" height="90" fill="#163832" opacity="0.8"/>
+    <rect y="395" width="900" height="1" fill="#c4a55a" opacity="0.2"/>
+    <text x="180" y="425" text-anchor="middle" font-size="26" font-weight="600" fill="#c4a55a" class="font-display">15+</text>
+    <text x="180" y="445" text-anchor="middle" font-size="9" fill="#a89880" class="font-body">Anos de Experiência</text>
+    <line x1="300" y1="405" x2="300" y2="475" stroke="#c4a55a" stroke-width="0.5" opacity="0.3"/>
+    <text x="390" y="425" text-anchor="middle" font-size="26" font-weight="600" fill="#c4a55a" class="font-display">2.500+</text>
+    <text x="390" y="445" text-anchor="middle" font-size="9" fill="#a89880" class="font-body">Casos Atendidos</text>
+    <line x1="510" y1="405" x2="510" y2="475" stroke="#c4a55a" stroke-width="0.5" opacity="0.3"/>
+    <text x="600" y="425" text-anchor="middle" font-size="26" font-weight="600" fill="#c4a55a" class="font-display">98%</text>
+    <text x="600" y="445" text-anchor="middle" font-size="9" fill="#a89880" class="font-body">Satisfação dos Clientes</text>
+    <line x1="720" y1="405" x2="720" y2="475" stroke="#c4a55a" stroke-width="0.5" opacity="0.3"/>
+    <text x="810" y="425" text-anchor="middle" font-size="26" font-weight="600" fill="#c4a55a" class="font-display">4</text>
+    <text x="810" y="445" text-anchor="middle" font-size="9" fill="#a89880" class="font-body">Advogados Especializados</text>
+
+    <!-- Section label -->
+    <text x="450" y="500" text-anchor="middle" font-size="9" fill="#4a7a6a" class="font-body" letter-spacing="2">HERO — INÍCIO</text>
+  </g>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- SLIDE 2 — SOBRE -->
+  <!-- ═══════════════════════════════════════ -->
+  <g class="slide slide-2">
+    <!-- Navbar (compact) -->
+    <rect y="44" width="900" height="42" fill="#0d2420" opacity="0.97"/>
+    <rect y="44" width="900" height="1" fill="#c4a55a" opacity="0.15"/>
+    <text x="54" y="70" text-anchor="middle" font-size="12" font-weight="700" fill="#c4a55a" class="font-display">DF</text>
+    <text x="76" y="70" font-size="11" font-weight="600" fill="#f5f0e8" class="font-display">DF Advogados</text>
+    <text x="550" y="70" font-size="9" fill="#7aaa99" class="font-body">Sobre</text>
+    <text x="600" y="70" font-size="9" fill="#a89880" class="font-body">Áreas</text>
+    <text x="650" y="70" font-size="9" fill="#a89880" class="font-body">Equipe</text>
+
+    <!-- Sobre section -->
+    <text x="450" y="115" text-anchor="middle" font-size="9" letter-spacing="3" fill="#c4a55a" class="font-body">QUEM SOMOS</text>
+    <text x="450" y="148" text-anchor="middle" font-size="26" fill="#f5f0e8" class="font-display">Tradição e Inovação na</text>
+    <text x="450" y="176" text-anchor="middle" font-size="26" font-style="italic" fill="#c4a55a" class="font-display">Prática Jurídica</text>
+    <line class="underline-gold" x1="340" y1="182" x2="560" y2="182"/>
+
+    <!-- Two columns -->
+    <rect x="40" y="200" width="380" height="240" rx="8" fill="#163832" opacity="0.6"/>
+    <text x="230" y="228" text-anchor="middle" font-size="11" fill="#f5f0e8" class="font-display" font-weight="600">Sobre o Escritório</text>
+    <text x="60" y="252" font-size="9.5" fill="#a89880" class="font-body">O escritório DF Advogados nasceu do compromisso</text>
+    <text x="60" y="268" font-size="9.5" fill="#a89880" class="font-body">com a excelência na prestação de serviços jurídicos.</text>
+    <text x="60" y="284" font-size="9.5" fill="#a89880" class="font-body">Com atuação em Direito Civil e Trabalhista,</text>
+    <text x="60" y="300" font-size="9.5" fill="#a89880" class="font-body">construímos uma história de confiança e resultados.</text>
+    <!-- Pillars -->
+    <rect x="60" y="325" width="160" height="22" rx="4" fill="#1e4a42"/>
+    <text x="72" y="340" font-size="9" fill="#c4a55a" class="font-body">✦  Atendimento Personalizado</text>
+    <rect x="235" y="325" width="160" height="22" rx="4" fill="#1e4a42"/>
+    <text x="247" y="340" font-size="9" fill="#c4a55a" class="font-body">✦  Estratégia Jurídica</text>
+    <rect x="60" y="355" width="160" height="22" rx="4" fill="#1e4a42"/>
+    <text x="72" y="370" font-size="9" fill="#c4a55a" class="font-body">✦  Equipe Experiente</text>
+    <rect x="235" y="355" width="160" height="22" rx="4" fill="#1e4a42"/>
+    <text x="247" y="370" font-size="9" fill="#c4a55a" class="font-body">✦  Ética e Transparência</text>
+
+    <!-- Right visual -->
+    <rect x="460" y="200" width="400" height="240" rx="8" fill="url(#cardGrad)" opacity="0.8"/>
+    <rect x="460" y="200" width="400" height="4" rx="2" fill="url(#goldGrad)"/>
+    <text x="660" y="240" text-anchor="middle" font-size="48" fill="#c4a55a" class="font-display" opacity="0.15">§</text>
+    <text x="660" y="248" text-anchor="middle" font-size="48" fill="#c4a55a" class="font-display" opacity="0.2">§</text>
+    <text x="660" y="245" text-anchor="middle" font-size="52" fill="#c4a55a" class="font-display" opacity="0.3">§</text>
+    <text x="660" y="290" text-anchor="middle" font-size="13" fill="#f5f0e8" class="font-display" font-style="italic">"Confiança construída em cada caso"</text>
+    <text x="660" y="316" text-anchor="middle" font-size="9" fill="#7aaa99" class="font-body">15+ anos de experiência consolidada</text>
+    <!-- mini stats -->
+    <rect x="490" y="340" width="100" height="50" rx="6" fill="#0d2420" opacity="0.7"/>
+    <text x="540" y="363" text-anchor="middle" font-size="18" fill="#c4a55a" class="font-display">15+</text>
+    <text x="540" y="378" text-anchor="middle" font-size="8" fill="#a89880" class="font-body">Anos</text>
+    <rect x="610" y="340" width="100" height="50" rx="6" fill="#0d2420" opacity="0.7"/>
+    <text x="660" y="363" text-anchor="middle" font-size="18" fill="#c4a55a" class="font-display">98%</text>
+    <text x="660" y="378" text-anchor="middle" font-size="8" fill="#a89880" class="font-body">Satisfação</text>
+    <rect x="730" y="340" width="100" height="50" rx="6" fill="#0d2420" opacity="0.7"/>
+    <text x="780" y="363" text-anchor="middle" font-size="18" fill="#c4a55a" class="font-display">2.5k+</text>
+    <text x="780" y="378" text-anchor="middle" font-size="8" fill="#a89880" class="font-body">Casos</text>
+
+    <text x="450" y="500" text-anchor="middle" font-size="9" fill="#4a7a6a" class="font-body" letter-spacing="2">SEÇÃO — SOBRE</text>
+  </g>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- SLIDE 3 — ÁREAS DE ATUAÇÃO -->
+  <!-- ═══════════════════════════════════════ -->
+  <g class="slide slide-3">
+    <rect y="44" width="900" height="42" fill="#0d2420" opacity="0.97"/>
+    <rect y="44" width="900" height="1" fill="#c4a55a" opacity="0.15"/>
+    <text x="54" y="70" text-anchor="middle" font-size="12" font-weight="700" fill="#c4a55a" class="font-display">DF</text>
+    <text x="76" y="70" font-size="11" font-weight="600" fill="#f5f0e8" class="font-display">DF Advogados</text>
+    <text x="550" y="70" font-size="9" fill="#a89880" class="font-body">Sobre</text>
+    <text x="600" y="70" font-size="9" fill="#7aaa99" class="font-body">Áreas</text>
+
+    <text x="450" y="112" text-anchor="middle" font-size="9" letter-spacing="3" fill="#c4a55a" class="font-body">ÁREAS DE ATUAÇÃO</text>
+    <text x="450" y="142" text-anchor="middle" font-size="24" fill="#f5f0e8" class="font-display">Expertise para Proteger</text>
+    <text x="450" y="168" text-anchor="middle" font-size="24" font-style="italic" fill="#c4a55a" class="font-display">Seus Direitos</text>
+    <line class="underline-gold" x1="350" y1="175" x2="550" y2="175"/>
+
+    <!-- Cards grid 3x2 -->
+    <!-- Row 1 -->
+    <rect x="40" y="193" width="260" height="110" rx="8" fill="#163832"/>
+    <rect x="40" y="193" width="260" height="3" rx="2" fill="url(#goldGrad)"/>
+    <text x="60" y="218" font-size="11" font-weight="600" fill="#f5f0e8" class="font-display">Direito Civil</text>
+    <rect x="200" y="200" width="55" height="18" rx="9" fill="#c4a55a22"/>
+    <text x="228" y="213" text-anchor="middle" font-size="8" fill="#c4a55a" class="font-body">Principal</text>
+    <text x="60" y="238" font-size="9" fill="#a89880" class="font-body">Contratos, responsabilidade civil,</text>
+    <text x="60" y="253" font-size="9" fill="#a89880" class="font-body">família, sucessões e imobiliário.</text>
+    <text x="60" y="278" font-size="9" fill="#c4a55a" class="font-body">Saiba mais →</text>
+
+    <rect x="320" y="193" width="260" height="110" rx="8" fill="#163832"/>
+    <rect x="320" y="193" width="260" height="3" rx="2" fill="url(#goldGrad)"/>
+    <text x="340" y="218" font-size="11" font-weight="600" fill="#f5f0e8" class="font-display">Direito Trabalhista</text>
+    <rect x="475" y="200" width="55" height="18" rx="9" fill="#c4a55a22"/>
+    <text x="503" y="213" text-anchor="middle" font-size="8" fill="#c4a55a" class="font-body">Principal</text>
+    <text x="340" y="238" font-size="9" fill="#a89880" class="font-body">Rescisões, verbas salariais,</text>
+    <text x="340" y="253" font-size="9" fill="#a89880" class="font-body">assédio e relações de trabalho.</text>
+    <text x="340" y="278" font-size="9" fill="#c4a55a" class="font-body">Saiba mais →</text>
+
+    <rect x="600" y="193" width="260" height="110" rx="8" fill="#1a3530"/>
+    <text x="620" y="218" font-size="11" font-weight="600" fill="#f5f0e8" class="font-display">Direito do Consumidor</text>
+    <text x="620" y="238" font-size="9" fill="#a89880" class="font-body">Cobranças indevidas, vícios</text>
+    <text x="620" y="253" font-size="9" fill="#a89880" class="font-body">de produto e propaganda.</text>
+    <text x="620" y="278" font-size="9" fill="#c4a55a" class="font-body">Saiba mais →</text>
+
+    <!-- Row 2 -->
+    <rect x="40" y="318" width="260" height="110" rx="8" fill="#1a3530"/>
+    <text x="60" y="343" font-size="11" font-weight="600" fill="#f5f0e8" class="font-display">Direito Empresarial</text>
+    <text x="60" y="363" font-size="9" fill="#a89880" class="font-body">Constituição de empresas,</text>
+    <text x="60" y="378" font-size="9" fill="#a89880" class="font-body">contratos e assessoria PME.</text>
+    <text x="60" y="403" font-size="9" fill="#c4a55a" class="font-body">Saiba mais →</text>
+
+    <rect x="320" y="318" width="260" height="110" rx="8" fill="#1a3530"/>
+    <text x="340" y="343" font-size="11" font-weight="600" fill="#f5f0e8" class="font-display">Direito Previdenciário</text>
+    <text x="340" y="363" font-size="9" fill="#a89880" class="font-body">Aposentadorias, pensões</text>
+    <text x="340" y="378" font-size="9" fill="#a89880" class="font-body">e revisão de benefícios INSS.</text>
+    <text x="340" y="403" font-size="9" fill="#c4a55a" class="font-body">Saiba mais →</text>
+
+    <rect x="600" y="318" width="260" height="110" rx="8" fill="#1a3530"/>
+    <text x="620" y="343" font-size="11" font-weight="600" fill="#f5f0e8" class="font-display">Direito Administrativo</text>
+    <text x="620" y="363" font-size="9" fill="#a89880" class="font-body">Licitações, concursos,</text>
+    <text x="620" y="378" font-size="9" fill="#a89880" class="font-body">servidores e administração.</text>
+    <text x="620" y="403" font-size="9" fill="#c4a55a" class="font-body">Saiba mais →</text>
+
+    <text x="450" y="500" text-anchor="middle" font-size="9" fill="#4a7a6a" class="font-body" letter-spacing="2">SEÇÃO — ÁREAS DE ATUAÇÃO</text>
+  </g>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- SLIDE 4 — DIFERENCIAIS -->
+  <!-- ═══════════════════════════════════════ -->
+  <g class="slide slide-4">
+    <rect y="44" width="900" height="42" fill="#0d2420" opacity="0.97"/>
+    <rect y="44" width="900" height="1" fill="#c4a55a" opacity="0.15"/>
+    <text x="54" y="70" text-anchor="middle" font-size="12" font-weight="700" fill="#c4a55a" class="font-display">DF</text>
+    <text x="76" y="70" font-size="11" font-weight="600" fill="#f5f0e8" class="font-display">DF Advogados</text>
+
+    <text x="450" y="112" text-anchor="middle" font-size="9" letter-spacing="3" fill="#c4a55a" class="font-body">NOSSOS DIFERENCIAIS</text>
+    <text x="450" y="142" text-anchor="middle" font-size="24" fill="#f5f0e8" class="font-display">Por que Escolher a</text>
+    <text x="450" y="168" text-anchor="middle" font-size="24" font-style="italic" fill="#c4a55a" class="font-display">DF Advogados?</text>
+    <line class="underline-gold" x1="330" y1="175" x2="570" y2="175"/>
+
+    <!-- 4 diferenciais -->
+    <rect x="40" y="193" width="390" height="120" rx="8" fill="#163832"/>
+    <text x="60" y="220" font-size="30" fill="#c4a55a" class="font-display" opacity="0.3">01</text>
+    <text x="100" y="218" font-size="12" font-weight="600" fill="#f5f0e8" class="font-display">Atendimento Humanizado</text>
+    <text x="60" y="242" font-size="9.5" fill="#a89880" class="font-body">Cada cliente é único. Ouvimos com atenção e</text>
+    <text x="60" y="257" font-size="9.5" fill="#a89880" class="font-body">construímos a estratégia mais adequada à sua realidade.</text>
+
+    <rect x="470" y="193" width="390" height="120" rx="8" fill="#163832"/>
+    <text x="490" y="220" font-size="30" fill="#c4a55a" class="font-display" opacity="0.3">02</text>
+    <text x="530" y="218" font-size="12" font-weight="600" fill="#f5f0e8" class="font-display">Transparência Total</text>
+    <text x="490" y="242" font-size="9.5" fill="#a89880" class="font-body">Mantemos nossos clientes informados em todas</text>
+    <text x="490" y="257" font-size="9.5" fill="#a89880" class="font-body">as etapas, com clareza sobre prazos e custos.</text>
+
+    <rect x="40" y="328" width="390" height="120" rx="8" fill="#163832"/>
+    <text x="60" y="355" font-size="30" fill="#c4a55a" class="font-display" opacity="0.3">03</text>
+    <text x="100" y="353" font-size="12" font-weight="600" fill="#f5f0e8" class="font-display">Agilidade e Eficiência</text>
+    <text x="60" y="377" font-size="9.5" fill="#a89880" class="font-body">Utilizamos tecnologia para garantir respostas</text>
+    <text x="60" y="392" font-size="9.5" fill="#a89880" class="font-body">rápidas e acompanhamento contínuo de cada caso.</text>
+
+    <rect x="470" y="328" width="390" height="120" rx="8" fill="#163832"/>
+    <text x="490" y="355" font-size="30" fill="#c4a55a" class="font-display" opacity="0.3">04</text>
+    <text x="530" y="353" font-size="12" font-weight="600" fill="#f5f0e8" class="font-display">Atuação Estratégica</text>
+    <text x="490" y="377" font-size="9.5" fill="#a89880" class="font-body">Priorizamos soluções negociadas, mas prontos</text>
+    <text x="490" y="392" font-size="9.5" fill="#a89880" class="font-body">para atuação firme em litígio quando necessário.</text>
+
+    <text x="450" y="500" text-anchor="middle" font-size="9" fill="#4a7a6a" class="font-body" letter-spacing="2">SEÇÃO — DIFERENCIAIS</text>
+  </g>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- SLIDE 5 — EQUIPE -->
+  <!-- ═══════════════════════════════════════ -->
+  <g class="slide slide-5">
+    <rect y="44" width="900" height="42" fill="#0d2420" opacity="0.97"/>
+    <rect y="44" width="900" height="1" fill="#c4a55a" opacity="0.15"/>
+    <text x="54" y="70" text-anchor="middle" font-size="12" font-weight="700" fill="#c4a55a" class="font-display">DF</text>
+    <text x="76" y="70" font-size="11" font-weight="600" fill="#f5f0e8" class="font-display">DF Advogados</text>
+
+    <text x="450" y="112" text-anchor="middle" font-size="9" letter-spacing="3" fill="#c4a55a" class="font-body">NOSSA EQUIPE</text>
+    <text x="450" y="142" text-anchor="middle" font-size="24" fill="#f5f0e8" class="font-display">Profissionais Dedicados</text>
+    <text x="450" y="168" text-anchor="middle" font-size="24" font-style="italic" fill="#c4a55a" class="font-display">ao Seu Caso</text>
+    <line class="underline-gold" x1="350" y1="175" x2="550" y2="175"/>
+
+    <!-- Team cards -->
+    <rect x="40" y="193" width="260" height="250" rx="10" fill="#163832"/>
+    <rect x="40" y="193" width="260" height="4" rx="2" fill="url(#goldGrad)"/>
+    <!-- Avatar -->
+    <circle cx="170" cy="255" r="42" fill="#1e4a42"/>
+    <circle cx="170" cy="255" r="42" fill="none" stroke="#c4a55a" stroke-width="1.5" opacity="0.5"/>
+    <text x="170" y="263" text-anchor="middle" font-size="22" font-weight="700" fill="#c4a55a" class="font-display">DF</text>
+    <text x="170" y="318" text-anchor="middle" font-size="12" font-weight="600" fill="#f5f0e8" class="font-display">Dr. Daniel Ferreira</text>
+    <text x="170" y="334" text-anchor="middle" font-size="9" fill="#c4a55a" class="font-body">Sócio Fundador — Direito Civil</text>
+    <text x="170" y="358" text-anchor="middle" font-size="8.5" fill="#a89880" class="font-body">15+ anos em litígios e consultoria.</text>
+    <text x="170" y="372" text-anchor="middle" font-size="8.5" fill="#a89880" class="font-body">Pós-graduado em Dir. Processual.</text>
+    <rect x="115" y="385" width="110" height="18" rx="9" fill="#0d2420" opacity="0.8"/>
+    <text x="170" y="398" text-anchor="middle" font-size="8" fill="#7aaa99" class="font-body">OAB/XX 00.000</text>
+
+    <rect x="320" y="193" width="260" height="250" rx="10" fill="#163832"/>
+    <rect x="320" y="193" width="260" height="4" rx="2" fill="url(#goldGrad)"/>
+    <circle cx="450" cy="255" r="42" fill="#1e4a42"/>
+    <circle cx="450" cy="255" r="42" fill="none" stroke="#c4a55a" stroke-width="1.5" opacity="0.5"/>
+    <text x="450" y="263" text-anchor="middle" font-size="22" font-weight="700" fill="#c4a55a" class="font-display">FM</text>
+    <text x="450" y="318" text-anchor="middle" font-size="12" font-weight="600" fill="#f5f0e8" class="font-display">Dra. Fernanda Martins</text>
+    <text x="450" y="334" text-anchor="middle" font-size="9" fill="#c4a55a" class="font-body">Sócia — Direito Trabalhista</text>
+    <text x="450" y="358" text-anchor="middle" font-size="8.5" fill="#a89880" class="font-body">Referência em Dir. do Trabalho.</text>
+    <text x="450" y="372" text-anchor="middle" font-size="8.5" fill="#a89880" class="font-body">Foco em negociações estratégicas.</text>
+    <rect x="395" y="385" width="110" height="18" rx="9" fill="#0d2420" opacity="0.8"/>
+    <text x="450" y="398" text-anchor="middle" font-size="8" fill="#7aaa99" class="font-body">OAB/XX 00.000</text>
+
+    <rect x="600" y="193" width="260" height="250" rx="10" fill="#163832"/>
+    <rect x="600" y="193" width="260" height="4" rx="2" fill="url(#goldGrad)"/>
+    <circle cx="730" cy="255" r="42" fill="#1e4a42"/>
+    <circle cx="730" cy="255" r="42" fill="none" stroke="#c4a55a" stroke-width="1.5" opacity="0.5"/>
+    <text x="730" y="263" text-anchor="middle" font-size="22" font-weight="700" fill="#c4a55a" class="font-display">RA</text>
+    <text x="730" y="318" text-anchor="middle" font-size="12" font-weight="600" fill="#f5f0e8" class="font-display">Dr. Rafael Almeida</text>
+    <text x="730" y="334" text-anchor="middle" font-size="9" fill="#c4a55a" class="font-body">Associado — Dir. Empresarial</text>
+    <text x="730" y="358" text-anchor="middle" font-size="8.5" fill="#a89880" class="font-body">Experiência em assessoria para</text>
+    <text x="730" y="372" text-anchor="middle" font-size="8.5" fill="#a89880" class="font-body">pequenas e médias empresas.</text>
+    <rect x="675" y="385" width="110" height="18" rx="9" fill="#0d2420" opacity="0.8"/>
+    <text x="730" y="398" text-anchor="middle" font-size="8" fill="#7aaa99" class="font-body">OAB/XX 00.000</text>
+
+    <text x="450" y="500" text-anchor="middle" font-size="9" fill="#4a7a6a" class="font-body" letter-spacing="2">SEÇÃO — EQUIPE</text>
+  </g>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- SLIDE 6 — CONTATO + FOOTER -->
+  <!-- ═══════════════════════════════════════ -->
+  <g class="slide slide-6">
+    <rect y="44" width="900" height="42" fill="#0d2420" opacity="0.97"/>
+    <rect y="44" width="900" height="1" fill="#c4a55a" opacity="0.15"/>
+    <text x="54" y="70" text-anchor="middle" font-size="12" font-weight="700" fill="#c4a55a" class="font-display">DF</text>
+    <text x="76" y="70" font-size="11" font-weight="600" fill="#f5f0e8" class="font-display">DF Advogados</text>
+
+    <!-- CTA Banner -->
+    <rect y="86" width="900" height="90" fill="#163832"/>
+    <rect y="86" width="900" height="2" fill="url(#goldGrad)" opacity="0.6"/>
+    <text x="450" y="120" text-anchor="middle" font-size="20" fill="#f5f0e8" class="font-display">Precisa de orientação</text>
+    <text x="450" y="145" text-anchor="middle" font-size="20" font-style="italic" fill="#c4a55a" class="font-display">jurídica?</text>
+    <rect x="375" y="155" width="150" height="12" rx="2" fill="#0d2420" opacity="0.5"/>
+    <text x="450" y="165" text-anchor="middle" font-size="9" fill="#a89880" class="font-body">Entre em contato e agende sua consulta.</text>
+
+    <!-- Contact section -->
+    <text x="450" y="205" text-anchor="middle" font-size="9" letter-spacing="3" fill="#c4a55a" class="font-body">CONTATO</text>
+    <text x="450" y="228" text-anchor="middle" font-size="22" fill="#f5f0e8" class="font-display">Entre em</text>
+    <text x="450" y="250" text-anchor="middle" font-size="22" font-style="italic" fill="#c4a55a" class="font-display">Contato</text>
+
+    <!-- Form -->
+    <rect x="40" y="265" width="480" height="160" rx="8" fill="#163832"/>
+    <rect x="60" y="282" width="200" height="28" rx="4" fill="#1e4a42"/>
+    <text x="75" y="300" font-size="9" fill="#5a8a79" class="font-body">Nome Completo</text>
+    <rect x="280" y="282" width="200" height="28" rx="4" fill="#1e4a42"/>
+    <text x="295" y="300" font-size="9" fill="#5a8a79" class="font-body">Telefone</text>
+    <rect x="60" y="320" width="420" height="28" rx="4" fill="#1e4a42"/>
+    <text x="75" y="338" font-size="9" fill="#5a8a79" class="font-body">E-mail</text>
+    <rect x="60" y="358" width="420" height="45" rx="4" fill="#1e4a42"/>
+    <text x="75" y="376" font-size="9" fill="#5a8a79" class="font-body">Mensagem</text>
+    <!-- Submit btn -->
+    <rect x="380" y="388" width="120" height="28" rx="14" fill="url(#goldGrad)"/>
+    <text x="440" y="406" text-anchor="middle" font-size="9" font-weight="500" fill="#0d2420" class="font-body">Enviar Mensagem</text>
+
+    <!-- Contact info -->
+    <rect x="560" y="265" width="300" height="160" rx="8" fill="#163832"/>
+    <text x="580" y="292" font-size="10" font-weight="600" fill="#f5f0e8" class="font-display">Endereço</text>
+    <text x="580" y="308" font-size="9" fill="#a89880" class="font-body">Rua Exemplo, 123 — Sala 401</text>
+    <text x="580" y="322" font-size="9" fill="#a89880" class="font-body">Centro — Cidade/UF · CEP 00000-000</text>
+    <text x="580" y="345" font-size="10" font-weight="600" fill="#f5f0e8" class="font-display">Telefone &amp; E-mail</text>
+    <text x="580" y="361" font-size="9" fill="#c4a55a" class="font-body">(00) 0000-0000</text>
+    <text x="580" y="376" font-size="9" fill="#a89880" class="font-body">contato@dfadvogados.com.br</text>
+    <text x="580" y="396" font-size="10" font-weight="600" fill="#f5f0e8" class="font-display">Horário</text>
+    <text x="580" y="412" font-size="9" fill="#a89880" class="font-body">Seg–Sex: 8h–18h · Sáb: 9h–12h</text>
+
+    <!-- Footer -->
+    <rect y="440" width="900" height="60" fill="#0a1a18"/>
+    <rect y="440" width="900" height="1" fill="#c4a55a" opacity="0.15"/>
+    <text x="450" y="460" text-anchor="middle" font-size="11" fill="#c4a55a" class="font-display" font-weight="600">DF Advogados</text>
+    <text x="450" y="475" text-anchor="middle" font-size="8.5" fill="#4a7a6a" class="font-body">© 2026 DF Advogados. Todos os direitos reservados.</text>
+    <text x="450" y="490" text-anchor="middle" font-size="7.5" fill="#3a5a52" class="font-body">Este site não constitui publicidade. As informações não substituem assessoria jurídica profissional.</text>
+
+    <text x="450" y="508" text-anchor="middle" font-size="9" fill="#4a7a6a" class="font-body" letter-spacing="2">SEÇÃO — CONTATO &amp; FOOTER</text>
+  </g>
+
+  <!-- ═══ PROGRESS DOTS ═══ -->
+  <circle class="dot dot-1" cx="400" cy="507" r="4"/>
+  <circle class="dot dot-2" cx="416" cy="507" r="4"/>
+  <circle class="dot dot-3" cx="432" cy="507" r="4"/>
+  <circle class="dot dot-4" cx="448" cy="507" r="4"/>
+  <circle class="dot dot-5" cx="464" cy="507" r="4"/>
+  <circle class="dot dot-6" cx="480" cy="507" r="4"/>
+
+  <!-- ═══ BORDER ═══ -->
+  <rect width="900" height="520" rx="12" fill="none" stroke="#c4a55a" stroke-width="0.5" opacity="0.3"/>
+</svg>

@@ -4,15 +4,25 @@ Site profissional para o escritório de advocacia **DF Advogados**, com foco em 
 
 ---
 
+## 🖥️ Preview
+
+<p align="center">
+  <img src="./assets/img/preview.svg" alt="Preview do site DF Advogados — animação das seções" width="900"/>
+</p>
+
+> **Nota:** O SVG animado percorre automaticamente todas as seções do site — Hero, Sobre, Áreas de Atuação, Diferenciais, Equipe e Contato.
+
+---
+
 ## Tecnologias Utilizadas
 
-| Tecnologia       | Uso                                           |
-|------------------|-----------------------------------------------|
-| **HTML5**        | Estrutura semântica com tags `<header>`, `<section>`, `<article>`, `<nav>`, `<footer>` |
-| **CSS3**         | Estilos modulares com CSS Custom Properties (variáveis), Grid, Flexbox, `@import`, Media Queries |
+| Tecnologia | Uso |
+| --- | --- |
+| **HTML5** | Estrutura semântica com tags `<header>`, `<section>`, `<article>`, `<nav>`, `<footer>` |
+| **CSS3** | Estilos modulares com CSS Custom Properties (variáveis), Grid, Flexbox, `@import`, Media Queries |
 | **JavaScript ES6+** | Modules (`import`/`export`), IntersectionObserver, FormData API, DOM API |
 | **Google Fonts** | Tipografia: Cormorant Garamond (display) + Outfit (body) |
-| **BEM**          | Metodologia de nomenclatura CSS (`block__element--modifier`) |
+| **BEM** | Metodologia de nomenclatura CSS (`block__element--modifier`) |
 
 ---
 
@@ -41,7 +51,8 @@ df-advogados/
 │   └── contact-form.js        # Validação e envio do formulário
 └── assets/
     └── img/
-        └── logo.jpg           # Logo do escritório
+        ├── logo.jpg           # Logo do escritório
+        └── preview.svg        # ← Preview animado (para o README)
 ```
 
 ---
@@ -49,19 +60,24 @@ df-advogados/
 ## Como Rodar Localmente
 
 ### Opção 1 — Abrir direto no navegador
+
 Basta abrir o arquivo `index.html` no navegador. **Atenção:** Os módulos JS (`type="module"`) exigem que o arquivo seja servido via HTTP. Se abrir diretamente via `file://`, o JavaScript pode não carregar em alguns navegadores.
 
 ### Opção 2 — Servidor local com Node.js (recomendado)
-```bash
+
+```
 # Na pasta do projeto:
 npx live-server --port=3000 --open
 ```
+
 Ou:
-```bash
+
+```
 npx http-server -p 3000 -o
 ```
 
 ### Opção 3 — Extensão Live Server (VS Code)
+
 1. Instale a extensão **Live Server** no VS Code.
 2. Clique com o botão direito no `index.html` → **Open with Live Server**.
 
@@ -70,8 +86,10 @@ npx http-server -p 3000 -o
 ## Personalização
 
 ### Alterar cores da marca
+
 Edite o arquivo `css/variables.css`:
-```css
+
+```
 :root {
   --color-teal-deep: #163832;   /* Verde escuro principal */
   --color-gold: #c4a55a;        /* Dourado da marca */
@@ -79,26 +97,30 @@ Edite o arquivo `css/variables.css`:
 ```
 
 ### Alterar informações de contato
+
 No `index.html`, busque a seção `id="contato"` e atualize:
-- Endereço
-- Telefone / WhatsApp
-- E-mail
+
+* Endereço
+* Telefone / WhatsApp
+* E-mail
 
 ### Adicionar advogados
+
 Duplique um bloco `<article class="team-card">` dentro da seção `id="equipe"` e ajuste o nome, cargo e OAB.
 
 ### Integrar formulário de contato
+
 No arquivo `js/contact-form.js`, substitua o `setTimeout` da função `handleSubmit` pela chamada real à sua API ou serviço (ex: Formspree, EmailJS, backend próprio).
 
 ---
 
 ## SEO & Acessibilidade
 
-- Meta tags `<title>`, `<meta description>`, Open Graph
-- HTML semântico (`<header>`, `<main>`, `<section>`, `<article>`, `<nav>`, `<footer>`)
-- Atributos `aria-label`, `aria-hidden`, `aria-expanded`
-- `alt` em imagens, `<label>` com `for` nos inputs
-- Contraste de cores adequado (WCAG AA)
+* Meta tags `<title>`, `<meta description>`, Open Graph
+* HTML semântico (`<header>`, `<main>`, `<section>`, `<article>`, `<nav>`, `<footer>`)
+* Atributos `aria-label`, `aria-hidden`, `aria-expanded`
+* `alt` em imagens, `<label>` com `for` nos inputs
+* Contraste de cores adequado (WCAG AA)
 
 ---
 
@@ -106,10 +128,10 @@ No arquivo `js/contact-form.js`, substitua o `setTimeout` da função `handleSub
 
 O site é estático e pode ser hospedado em qualquer serviço:
 
-- **Vercel**: `npx vercel`
-- **Netlify**: arraste a pasta no painel
-- **GitHub Pages**: suba o repositório e ative nas configurações
-- **Hospedagem tradicional**: envie via FTP para a pasta `public_html`
+* **Vercel**: `npx vercel`
+* **Netlify**: arraste a pasta no painel
+* **GitHub Pages**: suba o repositório e ative nas configurações
+* **Hospedagem tradicional**: envie via FTP para a pasta `public_html`
 
 ---
 
